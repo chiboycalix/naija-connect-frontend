@@ -21,9 +21,9 @@ const Index = ({ setThemeData }: { setThemeData: any }) => {
 
   return (
     <Layout style={{ minHeight: '100vh' }}>
-      <Sidebar collapsed={collapsed} setThemeData={setThemeData}/>
+      <Sidebar collapsed={collapsed}/>
       <Layout>
-        <HeaderComponent setCollapsed={setCollapsed} collapsed={collapsed} colorBgContainer={colorBgContainer}/>
+        <HeaderComponent setCollapsed={setCollapsed} collapsed={collapsed} colorBgContainer={colorBgContainer} setThemeData={setThemeData}/>
         <ContentComponent colorBgContainer={colorBgContainer} />
       </Layout>
     </Layout>

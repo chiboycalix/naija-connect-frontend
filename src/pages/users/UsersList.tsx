@@ -1,7 +1,8 @@
+import UsersTable from "./UsersTable"
 
 const ListUsers = () => {
   return (
-    <div>ListUsers</div>
+    <UsersTable />
   )
 }
 

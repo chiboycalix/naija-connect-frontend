@@ -21,6 +21,10 @@ const App = () => {
           token: {
             colorPrimary: themeData.colorPrimary,
             borderRadius: themeData.borderRadius,
+            linkHoverDecoration: "none",
+            colorLink: themeData.colorPrimary,
+            colorLinkHover: themeData.colorPrimary,
+            colorLinkActive: themeData.colorPrimary,
           },
         }}
       >

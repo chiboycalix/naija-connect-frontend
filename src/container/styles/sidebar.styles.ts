@@ -3,11 +3,15 @@ export const sidebarStyles = {
   sidebar: {
     
   },
+
   logo: {
-    width: "95%",
-    marginLeft: "2.5%",
-    height: "60px",
-    backgroundColor: "#fff",
+    width: "100%",
     borderRadius: "6px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
   },
+  logoText: {
+    fontSize: "1.5rem",
+  }
 };
