@@ -35,6 +35,9 @@ const App: React.FC = () => {
     isSuccess: boolean;
   } = useMutation({
     mutationFn: loginUser,
+    onSuccess({ data }) {
+      localStorage.setItem("naijaConnectJWT", data.token);
+    },
   });
 
   const onFinish = (values: { email: string; password: string }) => {
@@ -42,8 +45,7 @@ const App: React.FC = () => {
       email: values.email,
       password: values.password,
     });
-
-    navigate("/")
+    navigate("/");
   };
 
   if (isError) {

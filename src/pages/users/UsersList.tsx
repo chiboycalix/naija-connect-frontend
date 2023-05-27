@@ -1,9 +1,13 @@
-import UsersTable from "./UsersTable"
+import { useQuery } from "@tanstack/react-query";
+import UsersTable from "./UsersTable";
+import { fetchUsers } from "../../apis/users";
 
 const ListUsers = () => {
-  return (
-    <UsersTable />
-  )
-}
+  const { isLoading, error, data, isError } = useQuery({
+    queryKey: ["users"],
+    queryFn: () => fetchUsers(),
+  });
+  return <UsersTable isLoading={isLoading} error={error} data={data?.data}isError={isError} />;
+};
 
-export default ListUsers
+export default ListUsers;

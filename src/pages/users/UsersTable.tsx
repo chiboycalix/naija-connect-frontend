@@ -1,29 +1,44 @@
-import React from "react";
 import { Button, Table } from "antd";
 import type { ColumnsType } from "antd/es/table";
 
 interface DataType {
   key: string;
-  name: string;
-  age: number;
+  firstName: string;
+  lastName: number;
+  email: string;
+  role: string;
 }
 
 const columns: ColumnsType<DataType> = [
   {
-    title: "Name",
-    dataIndex: "name",
-    key: "name",
-    render: (text) => <a>{text}</a>,
+    title: "First Name",
+    dataIndex: "firstName",
+    key: "firstName",
+    width: "20%",
   },
   {
-    title: "Age",
-    dataIndex: "age",
-    key: "age",
+    title: "Last Name",
+    dataIndex: "lastName",
+    key: "lastName",
+    width: "20%",
+  },
+  {
+    title: "Email",
+    dataIndex: "email",
+    key: "email",
+    width: "20%",
+  },
+  {
+    title: "Role",
+    dataIndex: "role",
+    key: "role",
+    width: "20%",
   },
   {
     title: "Action",
     key: "action",
     dataIndex: "action",
+    width: "20%",
     render: (_) => (
       <>
         <Button>More</Button>
@@ -32,26 +47,11 @@ const columns: ColumnsType<DataType> = [
   },
 ];
 
-const data: DataType[] = [
-  {
-    key: "1",
-    name: "John Brown",
-    age: 32,
-  },
-  {
-    key: "2",
-    name: "Jim Green",
-    age: 42,
-  },
-  {
-    key: "3",
-    name: "Joe Black",
-    age: 32,
-  },
-];
+const UsersTable = ({ isError, isLoading, data, error }: {isError: boolean; isLoading: boolean; data: any, error: any}) => {
 
-const UsersTable: React.FC = () => (
-  <Table columns={columns} dataSource={data} />
-);
+  return (
+    <Table columns={columns} dataSource={data} rowKey={(record) => record.email} loading={isLoading}/>
+  );
+}
 
 export default UsersTable;
