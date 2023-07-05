@@ -47,11 +47,28 @@ const columns: ColumnsType<DataType> = [
   },
 ];
 
-const UsersTable = ({ isError, isLoading, data, error }: {isError: boolean; isLoading: boolean; data: any, error: any}) => {
+const UsersTable = ({
+  isError,
+  isLoading,
+  data,
+  error,
+}: {
+  isError: boolean;
+  isLoading: boolean;
+  data: any;
+  error: any;
+}) => {
+  console.log({ isError, error });
 
   return (
-    <Table columns={columns} dataSource={data} rowKey={(record) => record.email} loading={isLoading}/>
+    <Table
+      columns={columns}
+      dataSource={data}
+      rowKey={(record) => record.email}
+      loading={isLoading}
+      size="small"
+    />
   );
-}
+};
 
 export default UsersTable;
